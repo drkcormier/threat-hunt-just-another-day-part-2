@@ -21,11 +21,11 @@ During a routine credential exposure sweep we flagged one of those new hires. Hi
 
 What we need you to work out:
 
-   · How the account was found and why it was worth targeting
-   · Whether the credentials were actually used, and from where
-   · What happened once someone was on the keyboard
-   · What the account reached outside its role, and where that material went
-   · Whether anything was left behind, and the honest root cause
+   - How the account was found and why it was worth targeting
+   - Whether the credentials were actually used, and from where
+   - What happened once someone was on the keyboard
+   - What the account reached outside its role, and where that material went
+   - Whether anything was left behind, and the honest root cause
 
 Two things to hold from the start. The loudest thing in the data is not the story. That box is under constant brute-force noise, and almost none of it goes anywhere. And not every deletion is a cover-up. Windows and its applications tidy up after themselves constantly. Learn to tell a machine apart from a person.
 
