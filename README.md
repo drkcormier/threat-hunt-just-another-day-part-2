@@ -35,4 +35,4 @@ Get hunting.
 
 ---
 ### Investigation Report
-[Investigation Report]()
+[Investigation Report](https://github.com/drkcormier/threat-hunt-just-another-day-part-2/blob/main/another-day-part-2-investigation-report.md)
