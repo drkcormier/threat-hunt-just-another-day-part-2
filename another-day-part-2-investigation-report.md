@@ -207,7 +207,7 @@ DeviceLogonEvents                              // law-cyber-range
 
 *Account-scoped sweep across the estate. Three LogonFailed events in total for m.reed on nh-wks-it-01. The nh-fs-01 and nh-dc-01 successes visible here are the two follow-up questions recorded in section 3.*
 
-<img width="856" height="741" alt="02-f3-account-host-distribution" src="https://github.com/user-attachments/assets/e8c7140f-e2c1-4e95-8506-8d2c9bf4627e" />
+<img width="1350" height="996" alt="03-f3-source-address-profile" src="https://github.com/user-attachments/assets/46141bc8-69b5-4b76-9ab0-5b852f95980b" />
 
 *Adding RemoteIP and LogonType separates the operator from the noise floor. 116.45.242.115 fails three times then succeeds; 45.131.194.61 succeeds with no failures at all.*
 
