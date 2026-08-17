@@ -134,7 +134,7 @@ Total hands-on-keyboard time: **31 minutes**, 18:26 to 18:57.
 | Cached support reference      | `NH-WKS-IT-01`, public address `135.237.163.62`, internal `10.1.0.233`, and the instruction to use domain credentials. Cached 30 April 2026, two days after the technician's start date |
 | Role matrix (MSP reference)   | `m.reed`, Standard User, start 2026-04-28, entitled to IT workstation, IT share, limited workstation support |
 
-
+<img width="1448" height="1007" alt="image" src="https://github.com/user-attachments/assets/b78c5e3c-3129-494c-afdb-93c56a9d5233" />
 
 *Artefact 01. Role, employer, one-month tenure and a personal email address in a public contact field. Everything here was published voluntarily.*
 
@@ -203,11 +203,11 @@ DeviceLogonEvents                              // law-cyber-range
 | (none)          | Batch             | 0        | 78        | 25 May   | 29 May   | `admin_maint.ps1` task |
 | ::1             | CachedInteractive | 0        | 1         | 18:47:23 | 18:47:23 | Loopback, same session |
 
-![Account activity by host and action type](assets/f3-account-host-distribution.png)
+<img width="856" height="741" alt="02-f3-account-host-distribution" src="https://github.com/user-attachments/assets/b61519f8-4a5c-4b91-9149-1f68f20d9821" />
 
 *Account-scoped sweep across the estate. Three LogonFailed events in total for m.reed on nh-wks-it-01. The nh-fs-01 and nh-dc-01 successes visible here are the two follow-up questions recorded in section 3.*
 
-![Source address and logon type profile](assets/f3-source-address-profile.png)
+<img width="856" height="741" alt="02-f3-account-host-distribution" src="https://github.com/user-attachments/assets/e8c7140f-e2c1-4e95-8506-8d2c9bf4627e" />
 
 *Adding RemoteIP and LogonType separates the operator from the noise floor. 116.45.242.115 fails three times then succeeds; 45.131.194.61 succeeds with no failures at all.*
 
@@ -248,7 +248,7 @@ DeviceProcessEvents                            // law-cyber-range
 
 **Result:** 228 rows. Parent-process distribution: `svchost.exe` 113, `msedge.exe` 42, `cmd.exe` 20, `explorer.exe` 16, `onedrivesetup.exe` 6, `winlogon.exe` 5, `net.exe` 5, `msedgewebview2.exe` 5, `setup.exe` 4, `powershell.exe` 2, others 10.
 
-![Full session process list](assets/f5-session-process-list.png)
+<img width="1382" height="1680" alt="04-f5-session-process-list" src="https://github.com/user-attachments/assets/be5e14a5-6f20-4895-ab63-39ccb03206a0" />
 
 *First-logon provisioning fills the two minutes between session establishment and the first shell. The hourly admin_maint.ps1 task is visible above it, predating the intrusion.*
 
@@ -284,13 +284,13 @@ cmd.exe /q /c del /q "C:\Users\m.reed\AppData\Local\Microsoft\OneDrive\Update\On
 2. **Duplication.** The identical entry appears **twice** at 18:41. Operators do not run the same deletion twice; startup entries fire per-session.
 3. **Target and context.** It deletes OneDrive's own installer from OneDrive's own update directory, at the end of eleven minutes of continuous `onedrivesetup.exe` activity in the same profile (`/thfirstsetup`, then `/update /restart`). Nothing else was deleted.
 
-![OneDriveSetup process lineage](assets/f6-onedrive-lineage.png)
+<img width="1382" height="1680" alt="04-f5-session-process-list" src="https://github.com/user-attachments/assets/c229d2a5-c092-47e2-8527-24baa2164726" />
 
 *Parent chain resolves the trap: userinit.exe to explorer.exe to cmd.exe, and the deletion appears twice. A logon-shell autostart path, not a typed command.*
 
 The full deletion sweep over the window returns 33 rows: AppX package files under `C:\Program Files\Windows...` initiated by `svchost.exe -k wsappx`, a Defender definition patch, the OneDrive sequence, and nothing initiated by the operator's shells.
 
-![Deletion sweep across the window](assets/f6-deletion-sweep.png)
+<img width="2735" height="1704" alt="06-f6-deletion-sweep" src="https://github.com/user-attachments/assets/0a285da4-5866-48c5-a7bb-6c3703b70e71" />
 
 *All 33 deletions. AppX package files under svchost, a Defender definition patch, and the OneDrive sequence. Nothing initiated by the operator's shells.*
 
@@ -376,7 +376,7 @@ DeviceFileEvents                               // law-cyber-range
 
 Excluding `AppData` and `WindowsApps` reduces the result to six rows. Without those exclusions the same query returns hundreds of OneDrive and Edge provisioning events.
 
-![Staging, archive and exfiltration chain](assets/f9-staging-archive-exfil.png)
+<img width="2735" height="1704" alt="06-f6-deletion-sweep" src="https://github.com/user-attachments/assets/98dee2a1-382d-4d11-80b7-32b0e51e7fa4" />
 
 *The full chain in seven rows. Three files staged into SupportReview by cmd.exe, archived by powershell.exe, then the same archive written to \\tsclient\G\Temp\NimbusSupport at 18:57.*
 
@@ -434,11 +434,11 @@ DeviceLogonEvents                              // law-cyber-range
 | Network   | 10.1.0.233 | LogonSuccess | 29    |
 | Network   | (none)     | LogonSuccess | 10    |
 
-![Process events for m.reed on nh-fs-01](assets/f11-fs01-process-zero.png)
+<img width="2735" height="1704" alt="06-f6-deletion-sweep" src="https://github.com/user-attachments/assets/da56d09b-67be-4a4b-a210-5874a35f2b20" />
 
 *Zero rows. The negative is the finding: nothing was ever executed on the file server.*
 
-![Logon characterisation on nh-fs-01](assets/f11-fs01-logon-types.png)
+<img width="931" height="715" alt="09-f11-fs01-logon-types" src="https://github.com/user-attachments/assets/d6285635-6589-46c4-8d5f-9aa214c10339" />
 
 *Network logons only, 29 of them sourced from 10.1.0.233, which is nh-wks-it-01. Share access, not a session.*
 
@@ -464,7 +464,7 @@ The ten blank-source logons are unattributed and are recorded as a gap.
 
 ---
 
-![Service installation sweep](assets/n1-serviceinstalled-sweep.png)
+<img width="1189" height="1588" alt="10-n1-serviceinstalled-sweep" src="https://github.com/user-attachments/assets/6b34dd9c-6d11-4ae7-8549-e6bbe729394c" />
 
 *N1. Every ServiceInstalled event is initiated by svchost.exe under the machine account nh-wks-it-01$, and the set repeats once per session. Windows per-user service registration, not operator persistence.*
 
