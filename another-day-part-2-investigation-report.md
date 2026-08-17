@@ -134,7 +134,7 @@ Total hands-on-keyboard time: **31 minutes**, 18:26 to 18:57.
 | Cached support reference      | `NH-WKS-IT-01`, public address `135.237.163.62`, internal `10.1.0.233`, and the instruction to use domain credentials. Cached 30 April 2026, two days after the technician's start date |
 | Role matrix (MSP reference)   | `m.reed`, Standard User, start 2026-04-28, entitled to IT workstation, IT share, limited workstation support |
 
-<img width="1448" height="1007" alt="image" src="https://github.com/user-attachments/assets/b78c5e3c-3129-494c-afdb-93c56a9d5233" />
+<img width="1448" height="1006" alt="01-f1-public-profile" src="https://github.com/user-attachments/assets/24aff379-a1f9-4d01-8136-7e6f61a27dcf" />
 
 *Artefact 01. Role, employer, one-month tenure and a personal email address in a public contact field. Everything here was published voluntarily.*
 
@@ -207,7 +207,7 @@ DeviceLogonEvents                              // law-cyber-range
 
 *Account-scoped sweep across the estate. Three LogonFailed events in total for m.reed on nh-wks-it-01. The nh-fs-01 and nh-dc-01 successes visible here are the two follow-up questions recorded in section 3.*
 
-<img width="1350" height="996" alt="03-f3-source-address-profile" src="https://github.com/user-attachments/assets/46141bc8-69b5-4b76-9ab0-5b852f95980b" />
+<img width="1350" height="996" alt="03-f3-source-address-profile" src="https://github.com/user-attachments/assets/78b243a4-1cd1-4f6a-9e9c-357b6114e48d" />
 
 *Adding RemoteIP and LogonType separates the operator from the noise floor. 116.45.242.115 fails three times then succeeds; 45.131.194.61 succeeds with no failures at all.*
 
