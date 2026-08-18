@@ -27,10 +27,6 @@ Nimbus Health // Security Operations · Case NH-INC-2026-0528
 | ----------- | -------------- | ---------- | -------------------------------------------------------------------- |
 | 1.0         | 2026-08-15     | [ANALYST]  | Initial issue. Investigation complete, compromise confirmed, exfiltration confirmed. |
 
-### Note on time
-
-**The Sentinel portal rendered results in browser-local time (UTC-7) while `TimeGenerated` filters evaluate in UTC.** This is not cosmetic: narrow UTC windows built around locally-displayed timestamps returned zero rows twice during this investigation. Times in this report are given as **displayed (UTC-7)**, with the UTC equivalent being +7 hours; the operator session displayed as 28 May 18:28–18:57 is 29 May 01:28–01:57 UTC. The workspace timezone setting was not independently confirmed and is listed in Appendix D (D1).
-
 ---
 
 ## 2. Executive summary
